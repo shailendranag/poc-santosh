@@ -30,7 +30,8 @@ public class userController {
     }
 
     @DeleteMapping("/delete")
-    public String deleteUser(){
-        return "200 OK";
+    public String deleteUser(@RequestBody user usr){
+        userService.deleteUser(usr);
+        return "Deleted Successfully";
     }
 }

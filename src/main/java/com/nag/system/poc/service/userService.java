@@ -22,5 +22,7 @@ public class userService {
         userRepository.save(usr);
     }
 
-
+    public void deleteUser(user usr){
+        userRepository.delete(usr);
+    }
 }
