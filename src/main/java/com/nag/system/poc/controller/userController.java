@@ -35,6 +35,7 @@ public class userController {
     @PutMapping("/update")
     public void updateUser(@RequestBody user usr){
         userService.updateUser(usr);
+        System.out.println("Updated");
     }
 
     @DeleteMapping("/delete")
