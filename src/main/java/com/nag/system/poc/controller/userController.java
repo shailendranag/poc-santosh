@@ -3,7 +3,15 @@ package com.nag.system.poc.controller;
 import com.nag.system.poc.domain.user;
 import com.nag.system.poc.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
+
+
 
 import java.util.List;
 
@@ -25,8 +33,8 @@ public class userController {
     }
 
     @PutMapping("/update")
-    public String updateUser(){
-        return "200 OK";
+    public void updateUser(@RequestBody user usr){
+        userService.updateUser(usr);
     }
 
     @DeleteMapping("/delete")
